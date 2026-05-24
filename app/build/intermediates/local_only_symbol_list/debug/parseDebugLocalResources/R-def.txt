@@ -69,6 +69,7 @@ drawable bg_stats_progress_track
 drawable bg_stats_suggestion_card
 drawable bottom_nav_item_background
 drawable cherry_blossom_tree
+drawable farm_base
 drawable farmbase
 drawable ic_activity_leaf
 drawable ic_gift_reward

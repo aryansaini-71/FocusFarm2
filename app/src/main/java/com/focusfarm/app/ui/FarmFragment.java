@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ import java.util.Locale;
 
 public class FarmFragment extends Fragment {
 
+    private ImageView imgFarmBase;
     private TreeView farmTree;
     private TextView treeStage;
     private MetricRingView ringHealth;
@@ -38,6 +40,7 @@ public class FarmFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        imgFarmBase = view.findViewById(R.id.img_farm_base);
         farmTree = view.findViewById(R.id.farm_tree);
         treeStage = view.findViewById(R.id.tv_tree_stage);
         ringHealth = view.findViewById(R.id.ring_health);
@@ -64,12 +67,17 @@ public class FarmFragment extends Fragment {
     }
 
     private void bindFarmUi() {
-        if (getContext() == null) {
+        if (getContext() == null || imgFarmBase == null || farmTree == null || treeStage == null) {
             return;
         }
 
         int level = SharedPrefsManager.getTreeLevel(getContext());
+
+        imgFarmBase.setVisibility(View.VISIBLE);
+        imgFarmBase.setImageResource(R.drawable.farm_base);
+        farmTree.setVisibility(View.VISIBLE);
         farmTree.bindFromPrefs(getContext());
+        treeStage.setVisibility(View.VISIBLE);
         treeStage.setText(getString(R.string.tree_stage_format, level));
 
         int health = SharedPrefsManager.getFarmHealth(getContext());

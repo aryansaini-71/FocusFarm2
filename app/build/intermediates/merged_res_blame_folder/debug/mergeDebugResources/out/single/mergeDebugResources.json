@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-debug-43:\\layout_component_streak_dots.xml.flat",
-        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-main-45:\\layout\\component_streak_dots.xml"
-    },
-    {
         "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-debug-43:\\layout_component_tree_view.xml.flat",
         "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-main-45:\\layout\\component_tree_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-debug-43:\\layout_component_streak_dots.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-main-45:\\layout\\component_streak_dots.xml"
     },
     {
         "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-debug-43:\\drawable_ic_activity_leaf.xml.flat",
@@ -72,16 +72,16 @@
         "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-main-45:\\layout\\fragment_sleep.xml"
     },
     {
-        "merged": "com.focusfarm.app-debug-43:/layout_activity_main.xml.flat",
-        "source": "com.focusfarm.app-main-45:/layout/activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-debug-43:\\drawable_bg_sleep_counter.xml.flat",
         "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-main-45:\\drawable\\bg_sleep_counter.xml"
     },
     {
         "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-debug-43:\\layout_dialog_lock_duration.xml.flat",
         "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-main-45:\\layout\\dialog_lock_duration.xml"
+    },
+    {
+        "merged": "com.focusfarm.app-debug-43:/layout_fragment_farm.xml.flat",
+        "source": "com.focusfarm.app-main-45:/layout/fragment_farm.xml"
     },
     {
         "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-debug-43:\\drawable_bg_sleep_card.xml.flat",
@@ -244,10 +244,6 @@
         "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-main-45:\\drawable\\bg_stats_progress_track.xml"
     },
     {
-        "merged": "com.focusfarm.app-debug-43:/drawable_bg_header_soft.xml.flat",
-        "source": "com.focusfarm.app-main-45:/drawable/bg_header_soft.xml"
-    },
-    {
         "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-debug-43:\\drawable_ic_stats_lightbulb.xml.flat",
         "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-main-45:\\drawable\\ic_stats_lightbulb.xml"
     },
@@ -298,6 +294,10 @@
     {
         "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-debug-43:\\layout_fragment_block_app.xml.flat",
         "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-main-45:\\layout\\fragment_block_app.xml"
+    },
+    {
+        "merged": "com.focusfarm.app-debug-43:/drawable_farm_base.xml.flat",
+        "source": "com.focusfarm.app-main-45:/drawable/farm_base.xml"
     },
     {
         "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.4.1\\com.focusfarm.app-debug-43:\\layout_dialog_unblock_duration.xml.flat",
