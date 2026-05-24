@@ -1,58 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="minigame_placeholder_bg">#FF2A2A32</color>
-    <color name="overlay_accent">#FF6EE7B7</color>
-    <color name="overlay_background">#FF1A1A1E</color>
-    <color name="overlay_text_primary">#FFF5F5F5</color>
-    <color name="overlay_text_secondary">#FFB0B0B8</color>
+    <color name="amber">#BA7517</color>
+    <color name="bark">#6B4226</color>
+    <color name="black">#000000</color>
+    <color name="danger">#D85A30</color>
+    <color name="leaf">#639922</color>
+    <color name="moss">#3B6D11</color>
+    <color name="sky">#EAF3DE</color>
+    <color name="soil">#3B2A1A</color>
+    <color name="sprout">#97C459</color>
+    <color name="white">#FFFFFF</color>
+    <dimen name="card_radius">14dp</dimen>
+    <dimen name="header_height">56dp</dimen>
+    <dimen name="nav_height">64dp</dimen>
+    <dimen name="plant_slot_size">56dp</dimen>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="tree_lvl1">72dp</dimen>
+    <dimen name="tree_lvl2">104dp</dimen>
+    <dimen name="tree_lvl3">136dp</dimen>
     <string name="accessibility_dialog_later">Later</string>
-    <string name="accessibility_dialog_message">Anti-Brain Rot needs Accessibility access to detect and block distracting apps like Instagram and TikTok.\n\nTap \"Open Settings\" and enable Anti-Brain Rot.</string>
+    <string name="accessibility_dialog_message">Focus Farm needs Accessibility access to detect blocked apps.\n\nOpen Settings and enable Focus Farm.</string>
     <string name="accessibility_dialog_open_settings">Open Settings</string>
     <string name="accessibility_dialog_title">Accessibility permission needed</string>
     <string name="accessibility_service_description">
-        Blocks distracting apps (Instagram, TikTok) with a 60-second cognitive friction screen to reduce brain rot.
+        Detects when you open a blocked app and shows the Focus Farm intervention screen.
     </string>
-    <string name="app_name">Anti-Brain Rot</string>
-    <string name="blocker_placeholder">Select Apps to Block</string>
+    <string name="app_name">Focus Farm</string>
+    <string name="block_app_placeholder">Blocked apps list</string>
     <string name="btn_dismiss">Don\'t want to use the app (Close &amp; Lock)</string>
-    <string name="btn_open_accessibility">Open Accessibility Settings</string>
     <string name="btn_pass_test">Simulate Task Passed</string>
     <string name="countdown_label">Seconds until you can decide</string>
-    <string name="farm_grid_content_description">Isometric farm grid placeholder</string>
+    <string name="farm_grid_content_description">Isometric farm grid</string>
+    <string name="farm_points_placeholder">Points: 0</string>
     <string name="lock_120_minutes">120 minutes</string>
     <string name="lock_30_minutes">30 minutes</string>
     <string name="lock_60_minutes">60 minutes</string>
     <string name="lock_90_minutes">90 minutes</string>
     <string name="lock_dialog_message">You chose not to use this app. Pick a lock duration:</string>
     <string name="lock_dialog_title">Lock app for how long?</string>
-    <string name="minigame_placeholder">Mini-game goes here\n(TODO: your teammate)</string>
-    <string name="nav_blocker">Blocker</string>
+    <string name="minigame_placeholder">Mini-game goes here</string>
+    <string name="nav_block_app">Block Apps</string>
     <string name="nav_farm">Farm</string>
-    <string name="nav_sleep">Sleep Tree</string>
+    <string name="nav_sleep">Sleep</string>
     <string name="nav_stats">Stats</string>
     <string name="overlay_title">Take a breath</string>
-    <string name="sleep_tree_content_description">Sleep tree placeholder</string>
-    <string name="stats_placeholder">Weekly Statistics</string>
+    <string name="sleep_placeholder">Sleep tracking</string>
+    <string name="sleep_tree_content_description">Sleep tree</string>
+    <string name="stats_placeholder">Weekly statistics</string>
     <string name="toast_app_locked">App locked for %1$d minutes</string>
-    <string name="toast_plant_died">⚠️ A plant died!</string>
-    <string name="total_points_placeholder">Total Points: 0</string>
+    <string name="toast_plant_died">A plant died!</string>
     <string name="unblock_15_minutes">15 minutes</string>
     <string name="unblock_30_minutes">30 minutes</string>
     <string name="unblock_dialog_message">Task passed! How long should we let you use this app?</string>
     <string name="unblock_dialog_title">Unblock for how long?</string>
-    <string name="welcome_message">
-        Welcome to Anti-Brain Rot.\n\n
-        1. Tap the button below.\n
-        2. Enable \"Anti-Brain Rot\" in Accessibility settings.\n
-        3. Open Instagram or TikTok to test the overlay.
-    </string>
-    <style name="Theme.AntiBrainRot" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorPrimary">#FF6EE7B7</item>
-        <item name="colorPrimaryVariant">#FF34D399</item>
-        <item name="colorOnPrimary">#FF1A1A1E</item>
+    <style name="Theme.FocusFarm" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/moss</item>
+        <item name="colorPrimaryVariant">@color/leaf</item>
+        <item name="colorSecondary">@color/sprout</item>
+        <item name="colorOnPrimary">@color/sky</item>
+        <item name="android:windowBackground">@color/sky</item>
+        <item name="android:statusBarColor">@color/moss</item>
     </style>
-    <style name="Theme.AntiBrainRot.Dialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
-        <item name="colorPrimary">#FF6EE7B7</item>
-        <item name="colorAccent">#FF34D399</item>
+    <style name="Theme.FocusFarm.Dialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/moss</item>
+        <item name="colorAccent">@color/leaf</item>
     </style>
 </resources>

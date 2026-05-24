@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+  <!-- Single ImageView for tree asset, centered, pixelated rendering -->
+
+    <ImageView
+        android:id="@+id/tree_image"
+        android:layout_width="@dimen/tree_lvl1"
+        android:layout_height="@dimen/tree_lvl1"
+        android:contentDescription="@string/sleep_tree_content_description"
+        android:scaleType="fitCenter"
+        android:src="@drawable/treelvl1" />
+
+</LinearLayout>

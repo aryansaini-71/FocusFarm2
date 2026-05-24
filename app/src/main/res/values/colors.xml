@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="overlay_background">#FF1A1A1E</color>
-    <color name="overlay_text_primary">#FFF5F5F5</color>
-    <color name="overlay_text_secondary">#FFB0B0B8</color>
-    <color name="overlay_accent">#FF6EE7B7</color>
-    <color name="minigame_placeholder_bg">#FF2A2A32</color>
+    <color name="moss">#3B6D11</color>
+    <color name="leaf">#639922</color>
+    <color name="sprout">#97C459</color>
+    <color name="sky">#EAF3DE</color>
+    <color name="bark">#6B4226</color>
+    <color name="soil">#3B2A1A</color>
+    <color name="amber">#BA7517</color>
+    <color name="danger">#D85A30</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>

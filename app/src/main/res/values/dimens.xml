@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tree_lvl1">72dp</dimen>
+    <dimen name="tree_lvl2">104dp</dimen>
+    <dimen name="tree_lvl3">136dp</dimen>
+    <dimen name="plant_slot_size">56dp</dimen>
+    <dimen name="card_radius">14dp</dimen>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="nav_height">64dp</dimen>
+    <dimen name="header_height">56dp</dimen>
+</resources>

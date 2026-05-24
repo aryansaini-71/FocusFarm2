@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Shown after the user passes the cognitive task (simulated for now).
-  Picking a duration temporarily unblocks the intercepted app.
--->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -10,7 +6,6 @@
     android:padding="24dp">
 
     <TextView
-        android:id="@+id/tv_unblock_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -19,7 +14,6 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tv_unblock_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

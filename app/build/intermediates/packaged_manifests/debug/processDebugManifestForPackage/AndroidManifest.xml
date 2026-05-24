@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.antibrainrot.app"
+    package="com.focusfarm"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -8,11 +8,16 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="34" />
 
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <permission
-        android:name="com.antibrainrot.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.focusfarm.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.antibrainrot.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.focusfarm.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
@@ -24,11 +29,9 @@
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.AntiBrainRot" >
-
-        <!-- Launcher screen: guides user to enable the accessibility service -->
+        android:theme="@style/Theme.FocusFarm" >
         <activity
-            android:name="com.antibrainrot.app.MainActivity"
+            android:name="com.focusfarm.app.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,13 +39,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.focusfarm.app.onboarding.OnboardingActivity"
+            android:exported="false" />
 
-        <!--
-          Anti-Brain Rot interceptor — listens for Instagram / TikTok foreground.
-          User must enable manually under Settings → Accessibility.
-        -->
         <service
-            android:name="com.antibrainrot.app.AppInterceptorService"
+            android:name="com.focusfarm.app.service.FocusAccessibilityService"
             android:exported="true"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
             <intent-filter>
@@ -56,7 +58,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.antibrainrot.app.androidx-startup"
+            android:authorities="com.focusfarm.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"
@@ -68,6 +70,13 @@
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
         </provider>
+
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
 
         <receiver
             android:name="androidx.profileinstaller.ProfileInstallReceiver"

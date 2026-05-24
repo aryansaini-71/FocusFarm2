@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "com.antibrainrot.app-mergeDebugResources-29:/values-v16/values-v16.xml",
+            "outputFile": "com.focusfarm.app-mergeDebugResources-41:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\aryan\\.gradle\\caches\\9.0.0\\transforms\\99cfef9bc4c74aba9b4f5a0126547efc\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\2911a\\.gradle\\caches\\9.0.0\\transforms\\df248eff6468529b0cd8975a902b8daa\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\2911a\\.gradle\\caches\\9.0.0\\transforms\\99cfef9bc4c74aba9b4f5a0126547efc\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,16 +30,6 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\aryan\\.gradle\\caches\\9.0.0\\transforms\\df248eff6468529b0cd8975a902b8daa\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
                     }
                 }
             ]

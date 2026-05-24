@@ -1,39 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Full-screen friction overlay shown on top of Instagram / TikTok.
-  Inflated by AppInterceptorService via WindowManager (TYPE_ACCESSIBILITY_OVERLAY).
--->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/overlay_background"
+    android:background="@color/soil"
     android:clickable="true"
-    android:focusable="true"
-    android:importantForAccessibility="yes">
+    android:focusable="true">
 
-    <!-- App branding / title -->
     <TextView
         android:id="@+id/overlay_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="@string/overlay_title"
-        android:textColor="@color/overlay_text_primary"
+        android:textColor="@color/sky"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Large countdown (starts at 60) -->
     <TextView
         android:id="@+id/countdown_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/countdown_label"
-        android:textColor="@color/overlay_text_secondary"
+        android:textColor="@color/sprout"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,15 +38,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="60"
-        android:textColor="@color/overlay_accent"
+        android:textColor="@color/leaf"
         android:textSize="72sp"
         android:textStyle="bold"
-        android:fontFamily="sans-serif-medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/countdown_label" />
 
-    <!-- TODO: Replace this container with your mini-game Fragment / custom View -->
     <FrameLayout
         android:id="@+id/minigame_container"
         android:layout_width="0dp"
@@ -62,7 +53,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/minigame_placeholder_bg"
+        android:background="@color/bark"
         android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@id/btn_pass_test"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,11 +66,10 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/minigame_placeholder"
-            android:textColor="@color/overlay_text_secondary"
+            android:textColor="@color/sky"
             android:textSize="16sp" />
     </FrameLayout>
 
-    <!-- Placeholder: enable after mini-game validates success -->
     <Button
         android:id="@+id/btn_pass_test"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -94,7 +84,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Primary escape hatch: user gives up on opening the app -->
     <Button
         android:id="@+id/btn_dismiss"
         android:layout_width="0dp"

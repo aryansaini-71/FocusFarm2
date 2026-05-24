@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.antibrainrot.app-mergeDebugResources-29:/values-ldrtl-v17/values-ldrtl-v17.xml",
+            "outputFile": "com.focusfarm.app-mergeDebugResources-41:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\aryan\\.gradle\\caches\\9.0.0\\transforms\\d0558ff6a690d2184f06df245aa62f59\\transformed\\material-1.11.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "source": "C:\\Users\\2911a\\.gradle\\caches\\9.0.0\\transforms\\d0558ff6a690d2184f06df245aa62f59\\transformed\\material-1.11.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

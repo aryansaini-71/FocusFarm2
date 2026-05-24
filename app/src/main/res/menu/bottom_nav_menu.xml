@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Bottom navigation tabs.
-  Each item id must match the if/else checks in MainActivity.java.
--->
+<!-- Bottom tabs — ids must match MainActivity / nav_graph when wired -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
@@ -11,9 +8,9 @@
         android:title="@string/nav_farm" />
 
     <item
-        android:id="@+id/nav_blocker"
-        android:icon="@drawable/ic_nav_blocker"
-        android:title="@string/nav_blocker" />
+        android:id="@+id/nav_block_app"
+        android:icon="@drawable/ic_nav_block_app"
+        android:title="@string/nav_block_app" />
 
     <item
         android:id="@+id/nav_sleep"

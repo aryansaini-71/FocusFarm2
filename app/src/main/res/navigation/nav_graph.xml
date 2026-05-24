@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/farmFragment">
+
+    <fragment
+        android:id="@+id/farmFragment"
+        android:name="com.focusfarm.app.ui.FarmFragment"
+        android:label="@string/nav_farm" />
+
+    <fragment
+        android:id="@+id/blockAppFragment"
+        android:name="com.focusfarm.app.ui.BlockAppFragment"
+        android:label="@string/nav_block_app" />
+
+    <fragment
+        android:id="@+id/sleepFragment"
+        android:name="com.focusfarm.app.ui.SleepFragment"
+        android:label="@string/nav_sleep" />
+
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.focusfarm.app.ui.StatsFragment"
+        android:label="@string/nav_stats" />
+
+</navigation>

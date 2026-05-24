@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -7,11 +15,10 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AntiBrainRot">
+        android:theme="@style/Theme.FocusFarm">
 
-        <!-- Launcher screen: guides user to enable the accessibility service -->
         <activity
-            android:name=".MainActivity"
+            android:name="com.focusfarm.app.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +26,12 @@
             </intent-filter>
         </activity>
 
-        <!--
-          Anti-Brain Rot interceptor — listens for Instagram / TikTok foreground.
-          User must enable manually under Settings → Accessibility.
-        -->
+        <activity
+            android:name=".onboarding.OnboardingActivity"
+            android:exported="false" />
+
         <service
-            android:name=".AppInterceptorService"
+            android:name=".service.FocusAccessibilityService"
             android:exported="true"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>

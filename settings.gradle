@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AntiBrainRot"
+rootProject.name = "FocusFarm2"
 include ':app'
