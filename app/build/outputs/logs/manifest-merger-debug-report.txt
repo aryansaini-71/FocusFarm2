@@ -1,14 +1,15 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:2:1-40:12
+ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:2:1-43:12
+INJECTED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:2:1-43:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\d0558ff6a690d2184f06df245aa62f59\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\aryan\.gradle\caches\9.0.0\transforms\dfb20604bb7d83ad0e537af797f3ae37\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\aryan\.gradle\caches\9.0.0\transforms\308ef1fde41176f68e6c651fd82af28f\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\aryan\.gradle\caches\9.0.0\transforms\99cfef9bc4c74aba9b4f5a0126547efc\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\00aa25c321f725d6b858ecb2409b300f\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.3.2] C:\Users\aryan\.gradle\caches\9.0.0\transforms\ecbc67c2e17c41b17512e51e4f81cd6d\transformed\recyclerview-1.3.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\aryan\.gradle\caches\9.0.0\transforms\42ab6712faffbd00f55fbf0fbdca46bb\transformed\viewpager2-1.1.0-beta02\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\aryan\.gradle\caches\9.0.0\transforms\22cd921612ad634ee67d54850a3861e8\transformed\fragment-1.6.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.8.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\b3a540c19b35ba2d9eac1498b10d63a9\transformed\activity-1.8.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\fc1567b04f6e19c89c5ca70d17e2bd37\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
@@ -29,8 +30,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\aryan\.g
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\aryan\.gradle\caches\9.0.0\transforms\93810fdaa9f228d366e7fa2223d11c33\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\aryan\.gradle\caches\9.0.0\transforms\cb5de4f77f717de73b2f7602b60e3bcc\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\aryan\.gradle\caches\9.0.0\transforms\63b4cbed45bd9149b63c56c5c38d221e\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\562b7fd70e8cc65035aeef9e61530f24\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\eedacb6b0afeb57bc710f8e0d522a5ae\transformed\core-ktx-1.9.0\AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\16ae929ea756954443d7aed772c8c246\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\c2e8272bdda2de7b91b917c48eacef1f\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.9.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\df248eff6468529b0cd8975a902b8daa\transformed\core-1.9.0\AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\b6912e9dd4a833923b32ba8e2744bd2c\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -53,9 +54,13 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\aryan\.
 		INJECTED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.QUERY_ALL_PACKAGES
+ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:5:22-74
 application
-ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:4:5-38:19
-INJECTED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:4:5-38:19
+ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:7:5-41:19
+INJECTED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:7:5-41:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\d0558ff6a690d2184f06df245aa62f59\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\d0558ff6a690d2184f06df245aa62f59\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\aryan\.gradle\caches\9.0.0\transforms\dfb20604bb7d83ad0e537af797f3ae37\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -77,53 +82,53 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\aryan\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\df248eff6468529b0cd8975a902b8daa\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:7:9-41
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:8:9-50
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:11:9-50
 	android:icon
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:6:9-45
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:9:9-45
 	android:allowBackup
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:5:9-35
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:10:9-50
-activity#com.antibrainrot.app.MainActivity
-ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:13:9-20:20
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:13:9-50
+activity#com.antibrainrot.app.ui.main.MainActivity
+ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:16:9-23:20
 	android:exported
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:15:13-36
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:18:13-36
 	android:name
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:14:13-41
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:17:13-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:16:13-19:29
+ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:19:13-22:29
 action#android.intent.action.MAIN
-ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:17:17-69
+ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:17:25-66
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:18:17-77
+ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:18:27-74
-service#com.antibrainrot.app.AppInterceptorService
-ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:26:9-36:19
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:21:27-74
+service#com.antibrainrot.app.service.AppInterceptorService
+ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:29:9-39:19
 	android:exported
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:28:13-36
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:31:13-36
 	android:permission
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:29:13-79
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:32:13-79
 	android:name
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:27:13-50
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:30:13-58
 intent-filter#action:name:android.accessibilityservice.AccessibilityService
-ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:30:13-32:29
+ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:33:13-35:29
 action#android.accessibilityservice.AccessibilityService
-ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:31:17-92
+ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:34:17-92
 	android:name
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:31:25-89
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:34:25-89
 meta-data#android.accessibilityservice
-ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:33:13-35:72
+ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:36:13-38:72
 	android:resource
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:35:17-69
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:38:17-69
 	android:name
-		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:34:17-60
+		ADDED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml:37:17-60
 uses-sdk
 INJECTED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Focus Farm 2\app\src\main\AndroidManifest.xml
@@ -136,8 +141,10 @@ MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\aryan\.gradl
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\aryan\.gradle\caches\9.0.0\transforms\308ef1fde41176f68e6c651fd82af28f\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\aryan\.gradle\caches\9.0.0\transforms\99cfef9bc4c74aba9b4f5a0126547efc\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\aryan\.gradle\caches\9.0.0\transforms\99cfef9bc4c74aba9b4f5a0126547efc\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\00aa25c321f725d6b858ecb2409b300f\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\00aa25c321f725d6b858ecb2409b300f\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.3.2] C:\Users\aryan\.gradle\caches\9.0.0\transforms\ecbc67c2e17c41b17512e51e4f81cd6d\transformed\recyclerview-1.3.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.3.2] C:\Users\aryan\.gradle\caches\9.0.0\transforms\ecbc67c2e17c41b17512e51e4f81cd6d\transformed\recyclerview-1.3.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\aryan\.gradle\caches\9.0.0\transforms\42ab6712faffbd00f55fbf0fbdca46bb\transformed\viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\aryan\.gradle\caches\9.0.0\transforms\42ab6712faffbd00f55fbf0fbdca46bb\transformed\viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\aryan\.gradle\caches\9.0.0\transforms\22cd921612ad634ee67d54850a3861e8\transformed\fragment-1.6.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\aryan\.gradle\caches\9.0.0\transforms\22cd921612ad634ee67d54850a3861e8\transformed\fragment-1.6.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.8.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\b3a540c19b35ba2d9eac1498b10d63a9\transformed\activity-1.8.0\AndroidManifest.xml:20:5-44
@@ -178,10 +185,10 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\aryan\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\aryan\.gradle\caches\9.0.0\transforms\cb5de4f77f717de73b2f7602b60e3bcc\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\aryan\.gradle\caches\9.0.0\transforms\63b4cbed45bd9149b63c56c5c38d221e\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\aryan\.gradle\caches\9.0.0\transforms\63b4cbed45bd9149b63c56c5c38d221e\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\562b7fd70e8cc65035aeef9e61530f24\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\562b7fd70e8cc65035aeef9e61530f24\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\eedacb6b0afeb57bc710f8e0d522a5ae\transformed\core-ktx-1.9.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\eedacb6b0afeb57bc710f8e0d522a5ae\transformed\core-ktx-1.9.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\16ae929ea756954443d7aed772c8c246\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\16ae929ea756954443d7aed772c8c246\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\c2e8272bdda2de7b91b917c48eacef1f\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\c2e8272bdda2de7b91b917c48eacef1f\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.9.0] C:\Users\aryan\.gradle\caches\9.0.0\transforms\df248eff6468529b0cd8975a902b8daa\transformed\core-1.9.0\AndroidManifest.xml:20:5-44

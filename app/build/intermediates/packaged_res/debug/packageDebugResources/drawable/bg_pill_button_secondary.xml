@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Outlined pill for secondary actions (quiz wrong answers row styling) -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#33BB86FC">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FF252528" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/pill_button_accent_alt" />
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+</ripple>

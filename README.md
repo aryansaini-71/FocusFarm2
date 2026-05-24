@@ -1,30 +1,33 @@
-# Anti-Brain Rot (Hackathon Starter)
+# Focus Farm 2 / Anti-Brain Rot
 
-Native Android (Java + XML) app that intercepts Instagram and TikTok via an **AccessibilityService** and shows a 60-second cognitive friction overlay.
+Native Android (Java + XML) hackathon app that intercepts distracting apps via **AccessibilityService** and shows a cognitive friction overlay with breathing + quiz mini-games.
+
+## Project structure
+
+```
+app/src/main/java/com/antibrainrot/app/
+├── ui/           # Activities & Fragments
+├── service/      # Accessibility + overlay controller
+├── data/         # SharedPreferences (locks, points, plants)
+└── util/         # Accessibility permission helpers
+```
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for judges / teammates.
 
 ## Quick start
 
-1. Open this folder in **Android Studio** (Ladybug or newer recommended).
-2. Let Gradle sync, then run on a **physical device** (accessibility overlays are unreliable on some emulators).
-3. On the device: open the app → **Open Accessibility Settings** → enable **Anti-Brain Rot**.
-4. Open Instagram (`com.instagram.android`) or TikTok (`com.zhiliaoapp.musically`) to see the overlay.
+1. Open in **Android Studio** and sync Gradle.
+2. Run on a **physical device**.
+3. Enable **Anti-Brain Rot** under Settings → Accessibility.
+4. Open Instagram or TikTok to test the overlay.
 
-## Key files
+## Key classes
 
-| File | Purpose |
-|------|---------|
-| `AppInterceptorService.java` | Detects foreground app, shows overlay, 60s timer |
-| `interceptor_overlay.xml` | Full-screen UI layout |
-| `accessibility_service_config.xml` | Service capabilities + package filter |
-| `AndroidManifest.xml` | Service registration |
-
-## TODO hooks for your team
-
-- **Database / lock state** — `onAccessibilityEvent()` and `onDismissRequested()`
-- **Mini-game** — inflate your View into `R.id.minigame_container`
-- **Pass Test** — `onPassTestRequested()` after validating the game
-
-## Notes
-
-- TikTok’s package name can vary by region (`com.ss.android.ugc.trill`). Add extras to `BLOCKED_PACKAGES` and `packageNames` in the XML config if needed.
-- Users must manually grant Accessibility permission; this is required by Android for this approach.
+| Class | Role |
+|-------|------|
+| `ui.main.MainActivity` | Bottom nav shell |
+| `service.AppInterceptorService` | Foreground app detection |
+| `service.overlay.OverlayController` | WindowManager UI + mini-games |
+| `service.InterceptPolicy` | When to show overlay |
+| `data.InterceptPrefs` | Lock / unblock / cooldown timestamps |
+| `data.GameDataManager` | Points & plants |

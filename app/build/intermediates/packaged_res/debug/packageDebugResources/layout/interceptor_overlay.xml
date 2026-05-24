@@ -1,111 +1,266 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Full-screen friction overlay shown on top of Instagram / TikTok.
-  Inflated by AppInterceptorService via WindowManager (TYPE_ACCESSIBILITY_OVERLAY).
+  Premium full-screen interceptor overlay.
+  Content lives inside a rounded card; dismiss stays pinned below.
 -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/overlay_background"
+    android:background="@color/overlay_scrim"
     android:clickable="true"
     android:focusable="true"
-    android:importantForAccessibility="yes">
+    android:importantForAccessibility="yes"
+    android:padding="20dp">
 
-    <!-- App branding / title -->
-    <TextView
-        android:id="@+id/overlay_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="@string/overlay_title"
-        android:textColor="@color/overlay_text_primary"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Large countdown (starts at 60) -->
-    <TextView
-        android:id="@+id/countdown_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/countdown_label"
-        android:textColor="@color/overlay_text_secondary"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/overlay_title" />
-
-    <TextView
-        android:id="@+id/countdown_timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="60"
-        android:textColor="@color/overlay_accent"
-        android:textSize="72sp"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif-medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/countdown_label" />
-
-    <!-- TODO: Replace this container with your mini-game Fragment / custom View -->
-    <FrameLayout
-        android:id="@+id/minigame_container"
+    <!-- Main card -->
+    <LinearLayout
+        android:id="@+id/card_overlay_content"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
-        android:background="@color/minigame_placeholder_bg"
-        android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@id/btn_pass_test"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/countdown_timer">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/minigame_placeholder"
-            android:textColor="@color/overlay_text_secondary"
-            android:textSize="16sp" />
-    </FrameLayout>
-
-    <!-- Placeholder: enable after mini-game validates success -->
-    <Button
-        android:id="@+id/btn_pass_test"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="12dp"
-        android:text="@string/btn_pass_test"
-        android:textAllCaps="false"
+        android:background="@drawable/bg_rounded_card"
+        android:orientation="vertical"
+        android:padding="28dp"
         app:layout_constraintBottom_toTopOf="@id/btn_dismiss"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!-- Primary escape hatch: user gives up on opening the app -->
+        <TextView
+            android:id="@+id/overlay_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/overlay_title"
+            android:textColor="@color/overlay_text_primary"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/overlay_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="@string/overlay_subtitle"
+            android:textColor="@color/overlay_text_secondary"
+            android:textSize="14sp" />
+
+        <!-- Stacked mini-game screens -->
+        <FrameLayout
+            android:id="@+id/minigame_stack"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- Screen 1: choose task -->
+            <LinearLayout
+                android:id="@+id/layout_choose_task"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="28dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="@string/choose_task_prompt"
+                    android:textColor="@color/overlay_text_primary"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_breathing"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="14dp"
+                    android:background="@drawable/bg_pill_button"
+                    android:backgroundTint="@null"
+                    android:stateListAnimator="@null"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/btn_breathing_exercise"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pill_button_text"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_quiz"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_pill_button_secondary"
+                    android:backgroundTint="@null"
+                    android:stateListAnimator="@null"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/btn_quick_quiz"
+                    android:textAllCaps="false"
+                    android:textColor="@color/overlay_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Screen 2: breathing exercise -->
+            <LinearLayout
+                android:id="@+id/layout_breathing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/text_breathe_instruction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="@string/breathe_in"
+                    android:textColor="@color/overlay_text_primary"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_breathe_timer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="28dp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@color/pill_button_accent"
+                    android:textSize="64sp"
+                    android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/progress_breathing"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:max="60"
+                    android:progress="0"
+                    android:progressTint="@color/pill_button_accent"
+                    android:progressBackgroundTint="@color/minigame_placeholder_bg" />
+            </LinearLayout>
+
+            <!-- Screen 3: quiz -->
+            <LinearLayout
+                android:id="@+id/layout_quiz"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_quiz_paragraph"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="18dp"
+                        android:fontFamily="sans-serif"
+                        android:lineSpacingExtra="6dp"
+                        android:text="@string/quiz_space_paragraph"
+                        android:textColor="@color/overlay_text_secondary"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_quiz_question"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="22dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/quiz_question"
+                        android:textColor="@color/overlay_text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_answer_mercury"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_pill_button"
+                        android:backgroundTint="@null"
+                        android:stateListAnimator="@null"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/quiz_answer_mercury"
+                        android:textAllCaps="false"
+                        android:textColor="@color/pill_button_text"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_answer_venus"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_pill_button_secondary"
+                        android:backgroundTint="@null"
+                        android:stateListAnimator="@null"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/quiz_answer_venus"
+                        android:textAllCaps="false"
+                        android:textColor="@color/overlay_text_primary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_answer_earth"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_pill_button_secondary"
+                        android:backgroundTint="@null"
+                        android:stateListAnimator="@null"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/quiz_answer_earth"
+                        android:textAllCaps="false"
+                        android:textColor="@color/overlay_text_primary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </ScrollView>
+
+            </LinearLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Always visible — leaves blocked app immediately -->
     <Button
         android:id="@+id/btn_dismiss"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="32dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_pill_button_dismiss"
+        android:backgroundTint="@null"
+        android:stateListAnimator="@null"
+        android:fontFamily="sans-serif-medium"
         android:text="@string/btn_dismiss"
         android:textAllCaps="false"
+        android:textColor="@color/overlay_text_primary"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_overlay_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

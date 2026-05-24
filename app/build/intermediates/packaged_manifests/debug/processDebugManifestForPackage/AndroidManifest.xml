@@ -8,6 +8,9 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="34" />
 
+    <!-- Required on Android 11+ to list launchable apps in the Blocker tab -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
     <permission
         android:name="com.antibrainrot.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -28,7 +31,7 @@
 
         <!-- Launcher screen: guides user to enable the accessibility service -->
         <activity
-            android:name="com.antibrainrot.app.MainActivity"
+            android:name="com.antibrainrot.app.ui.main.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,7 +45,7 @@
           User must enable manually under Settings → Accessibility.
         -->
         <service
-            android:name="com.antibrainrot.app.AppInterceptorService"
+            android:name="com.antibrainrot.app.service.AppInterceptorService"
             android:exported="true"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
             <intent-filter>
