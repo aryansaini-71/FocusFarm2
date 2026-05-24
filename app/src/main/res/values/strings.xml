@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Anti-Brain Rot</string>
+
+    <string name="accessibility_service_description">
+        Blocks distracting apps (Instagram, TikTok) with a 60-second cognitive friction screen to reduce brain rot.
+    </string>
+
+    <string name="welcome_message">
+        Welcome to Anti-Brain Rot.\n\n
+        1. Tap the button below.\n
+        2. Enable \"Anti-Brain Rot\" in Accessibility settings.\n
+        3. Open Instagram or TikTok to test the overlay.
+    </string>
+    <string name="btn_open_accessibility">Open Accessibility Settings</string>
+
+    <!-- Bottom navigation tab labels -->
+    <string name="nav_farm">Farm</string>
+    <string name="nav_blocker">Blocker</string>
+    <string name="nav_sleep">Sleep Tree</string>
+    <string name="nav_stats">Stats</string>
+
+    <!-- Fragment placeholder text -->
+    <string name="total_points_placeholder">Total Points: 0</string>
+    <string name="blocker_placeholder">Select Apps to Block</string>
+    <string name="stats_placeholder">Weekly Statistics</string>
+    <string name="farm_grid_content_description">Isometric farm grid placeholder</string>
+    <string name="sleep_tree_content_description">Sleep tree placeholder</string>
+
+    <string name="overlay_title">Take a breath</string>
+    <string name="countdown_label">Seconds until you can decide</string>
+    <string name="minigame_placeholder">Mini-game goes here\n(TODO: your teammate)</string>
+    <string name="btn_pass_test">Simulate Task Passed</string>
+    <string name="btn_dismiss">Don\'t want to use the app (Close &amp; Lock)</string>
+
+    <!-- MainActivity accessibility permission dialog -->
+    <string name="accessibility_dialog_title">Accessibility permission needed</string>
+    <string name="accessibility_dialog_message">Anti-Brain Rot needs Accessibility access to detect and block distracting apps like Instagram and TikTok.\n\nTap \"Open Settings\" and enable Anti-Brain Rot.</string>
+    <string name="accessibility_dialog_open_settings">Open Settings</string>
+    <string name="accessibility_dialog_later">Later</string>
+
+    <!-- Lock duration dialog (AccessibilityService) -->
+    <string name="lock_dialog_title">Lock app for how long?</string>
+    <string name="lock_dialog_message">You chose not to use this app. Pick a lock duration:</string>
+    <string name="lock_30_minutes">30 minutes</string>
+    <string name="lock_60_minutes">60 minutes</string>
+    <string name="lock_90_minutes">90 minutes</string>
+    <string name="lock_120_minutes">120 minutes</string>
+    <string name="toast_app_locked">App locked for %1$d minutes</string>
+
+    <!-- Unblock duration dialog (AccessibilityService) -->
+    <string name="unblock_dialog_title">Unblock for how long?</string>
+    <string name="unblock_dialog_message">Task passed! How long should we let you use this app?</string>
+    <string name="unblock_15_minutes">15 minutes</string>
+    <string name="unblock_30_minutes">30 minutes</string>
+    <string name="toast_plant_died">⚠️ A plant died!</string>
+</resources>

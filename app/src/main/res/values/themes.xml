@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AntiBrainRot" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">#FF6EE7B7</item>
+        <item name="colorPrimaryVariant">#FF34D399</item>
+        <item name="colorOnPrimary">#FF1A1A1E</item>
+    </style>
+
+    <!-- Used for AlertDialogs shown from AppInterceptorService -->
+    <style name="Theme.AntiBrainRot.Dialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorPrimary">#FF6EE7B7</item>
+        <item name="colorAccent">#FF34D399</item>
+    </style>
+</resources>

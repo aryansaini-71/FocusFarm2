@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Shown when the user taps "Don't want to use the app" on the interceptor overlay.
+  Each button picks how long to lock the app.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tv_lock_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/lock_dialog_title"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_lock_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/lock_dialog_message"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn_lock_30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/lock_30_minutes"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_lock_60"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/lock_60_minutes"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_lock_90"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/lock_90_minutes"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_lock_120"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lock_120_minutes"
+        android:textAllCaps="false" />
+
+</LinearLayout>

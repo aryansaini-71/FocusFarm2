@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\layout_fragment_blocker.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\layout\\fragment_blocker.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\drawable_ic_nav_blocker.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\drawable\\ic_nav_blocker.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\layout_interceptor_overlay.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\layout\\interceptor_overlay.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\xml_accessibility_service_config.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\xml\\accessibility_service_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\layout_fragment_stats.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\layout\\fragment_stats.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\drawable_ic_placeholder_farm.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\drawable\\ic_placeholder_farm.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\drawable_ic_launcher.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\drawable\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\layout_fragment_farm.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\layout\\fragment_farm.xml"
+    },
+    {
+        "merged": "com.antibrainrot.app-debug-31:/layout_dialog_lock_duration.xml.flat",
+        "source": "com.antibrainrot.app-main-33:/layout/dialog_lock_duration.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\drawable_ic_placeholder_tree.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\drawable\\ic_placeholder_tree.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\drawable_ic_nav_stats.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\drawable\\ic_nav_stats.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\drawable_ic_nav_farm.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\drawable\\ic_nav_farm.xml"
+    },
+    {
+        "merged": "com.antibrainrot.app-debug-31:/layout_dialog_unblock_duration.xml.flat",
+        "source": "com.antibrainrot.app-main-33:/layout/dialog_unblock_duration.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\drawable_ic_nav_sleep.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\drawable\\ic_nav_sleep.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\layout_fragment_sleep_tree.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\layout\\fragment_sleep_tree.xml"
+    },
+    {
+        "merged": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-debug-31:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\aryan\\.gradle\\daemon\\9.0.0\\com.antibrainrot.app-main-33:\\layout\\activity_main.xml"
+    }
+]
