@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder art for sleep tree -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <path
+        android:fillColor="#FF8B5E3C"
+        android:pathData="M54,70 L66,70 L66,100 L54,100 Z" />
+    <path
+        android:fillColor="#FF6EE7B7"
+        android:pathData="M60,20 C40,45 40,65 60,70 C80,65 80,45 60,20 Z" />
+</vector>

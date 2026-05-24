@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder art for isometric farm grid -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <path
+        android:fillColor="#FF6EE7B7"
+        android:pathData="M20,70 L60,40 L100,70 L60,100 Z" />
+    <path
+        android:fillColor="#FF34D399"
+        android:pathData="M35,75 L60,58 L85,75 L60,92 Z" />
+</vector>

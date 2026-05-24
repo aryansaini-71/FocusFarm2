@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_content_decor"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:id="@+id/metrics_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="2dp">
+
+            <com.focusfarm.app.components.MetricRingView
+                android:id="@+id/ring_health"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.focusfarm.app.components.MetricRingView
+                android:id="@+id/ring_streak"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.focusfarm.app.components.MetricRingView
+                android:id="@+id/ring_sleep"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/farm_plot_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/farm_plot_min_height"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="4dp">
+
+            <ImageView
+                android:id="@+id/img_farm_base"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/farm_grid_content_description"
+                android:scaleType="fitCenter"
+                android:src="@drawable/farmbase"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="1.0" />
+
+            <com.focusfarm.app.components.TreeView
+                android:id="@+id/farm_tree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/img_farm_base"
+                app:layout_constraintEnd_toEndOf="@id/img_farm_base"
+                app:layout_constraintStart_toStartOf="@id/img_farm_base"
+                app:layout_constraintTop_toTopOf="@id/img_farm_base"
+                app:layout_constraintVertical_bias="0.32" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_tree_stage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="@string/tree_stage_placeholder"
+            android:textColor="@color/stats_text_secondary"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_farm_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:text="@string/farm_growth_hint"
+            android:textColor="@color/bark"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tree_lvl1">72dp</dimen>
+    <dimen name="tree_lvl2">104dp</dimen>
+    <dimen name="tree_lvl3">136dp</dimen>
+    <dimen name="plant_slot_size">56dp</dimen>
+    <dimen name="card_radius">14dp</dimen>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="nav_height">72dp</dimen>
+    <dimen name="header_height">56dp</dimen>
+    <dimen name="nav_icon_size">24dp</dimen>
+    <dimen name="progress_ring_height">168dp</dimen>
+    <dimen name="farm_plot_min_height">340dp</dimen>
+    <dimen name="stats_card_radius">28dp</dimen>
+    <dimen name="stats_inner_card_radius">16dp</dimen>
+    <dimen name="stats_section_spacing">20dp</dimen>
+    <dimen name="stats_points_ring_size">160dp</dimen>
+</resources>
