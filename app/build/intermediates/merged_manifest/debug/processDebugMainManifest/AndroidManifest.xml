@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
 
     <permission
         android:name="com.focusfarm.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -42,9 +43,13 @@
         <activity
             android:name="com.focusfarm.app.onboarding.OnboardingActivity"
             android:exported="false" />
+        <activity
+            android:name="com.focusfarm.app.ProfileActivity"
+            android:exported="false"
+            android:parentActivityName="com.focusfarm.app.MainActivity" />
 
         <service
-            android:name="com.focusfarm.app.service.FocusAccessibilityService"
+            android:name="com.focusfarm.app.service.AntiBrainRotService"
             android:exported="true"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
             <intent-filter>

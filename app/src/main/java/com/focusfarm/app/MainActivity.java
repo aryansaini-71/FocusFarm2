@@ -1,27 +1,21 @@
 package com.focusfarm.app;
 
-import android.accessibilityservice.AccessibilityServiceInfo;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.view.accessibility.AccessibilityManager;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.focusfarm.app.service.FocusAccessibilityService;
+import com.focusfarm.app.service.AntiBrainRotService;
 import com.focusfarm.app.ui.BlockAppFragment;
 import com.focusfarm.app.ui.FarmFragment;
 import com.focusfarm.app.ui.SleepFragment;
 import com.focusfarm.app.ui.StatsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.List;
-
-/**
- * Main entry: bottom tab bar hosting Farm, Block Apps, Sleep, and Stats.
- */
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigation;
@@ -33,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigation = findViewById(R.id.bottom_navigation);
+
+        findViewById(R.id.btn_profile).setOnClickListener(v ->
+                startActivity(new Intent(this, ProfileActivity.class)));
 
         bottomNavigation.setOnItemSelectedListener(item -> {
             int selectedId = item.getItemId();
@@ -63,36 +60,48 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (!isAccessibilityServiceEnabled()) {
+        refreshVisibleFragment();
+
+        if (isAccessibilityServiceEnabled(this, AntiBrainRotService.class)) {
+            hideAccessibilityPermissionDialog();
+        } else {
             showAccessibilityPermissionDialog();
+        }
+    }
+
+    /** Re-binds Farm metrics when returning from overlay / profile. */
+    public void refreshVisibleFragment() {
+        Fragment current = getSupportFragmentManager()
+                .findFragmentById(R.id.fragment_container);
+        if (current instanceof FarmFragment) {
+            ((FarmFragment) current).refreshUi();
         }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if (accessibilityDialog != null && accessibilityDialog.isShowing()) {
-            accessibilityDialog.dismiss();
-        }
-        accessibilityDialog = null;
+        hideAccessibilityPermissionDialog();
     }
 
-    private boolean isAccessibilityServiceEnabled() {
-        AccessibilityManager accessibilityManager =
-                (AccessibilityManager) getSystemService(ACCESSIBILITY_SERVICE);
+    /**
+     * Checks Settings.Secure for our exact accessibility component id.
+     * This avoids false positives from AccessibilityManager on some devices.
+     */
+    public static boolean isAccessibilityServiceEnabled(Context context, Class<?> serviceClass) {
+        String enabledServices = Settings.Secure.getString(
+                context.getContentResolver(),
+                Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES);
 
-        if (accessibilityManager == null) {
+        if (enabledServices == null || enabledServices.isEmpty()) {
             return false;
         }
 
-        List<AccessibilityServiceInfo> enabledServices =
-                accessibilityManager.getEnabledAccessibilityServiceList(
-                        AccessibilityServiceInfo.FEEDBACK_ALL_MASK);
+        String ourServiceId = context.getPackageName() + "/" + serviceClass.getName();
+        String[] serviceIds = enabledServices.split(":");
 
-        String ourServiceId = getPackageName() + "/" + FocusAccessibilityService.class.getName();
-
-        for (AccessibilityServiceInfo serviceInfo : enabledServices) {
-            if (ourServiceId.equals(serviceInfo.getId())) {
+        for (String serviceId : serviceIds) {
+            if (ourServiceId.equals(serviceId.trim())) {
                 return true;
             }
         }
@@ -118,10 +127,23 @@ public class MainActivity extends AppCompatActivity {
         accessibilityDialog.show();
     }
 
+    private void hideAccessibilityPermissionDialog() {
+        if (accessibilityDialog != null && accessibilityDialog.isShowing()) {
+            accessibilityDialog.dismiss();
+        }
+        accessibilityDialog = null;
+    }
+
     private void showFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .commit();
+    }
+
+    /** Opens the Sleep tab from Farm metric rings or other entry points. */
+    public void navigateToSleepTab() {
+        bottomNavigation.setSelectedItemId(R.id.nav_sleep);
+        showFragment(new SleepFragment());
     }
 }

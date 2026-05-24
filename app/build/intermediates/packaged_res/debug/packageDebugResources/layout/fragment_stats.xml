@@ -1,21 +1,351 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sky"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="@dimen/screen_padding">
+    android:background="@color/stats_bg"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbars="none">
 
-  <!-- StatsFragment: StatCardView x3, weekly chart, farm health preview -->
-
-    <TextView
-        android:id="@+id/tv_weekly_stats"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/stats_placeholder"
-        android:textColor="@color/soil"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="28dp">
 
-</LinearLayout>
+        <!-- 1. Global Resistance Index -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_stats_header_card"
+            android:elevation="1dp"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stats_resistance_title"
+                android:textColor="@color/soil"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/stats_resistance_subtitle"
+                android:textColor="@color/stats_text_secondary"
+                android:textSize="14sp" />
+
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp">
+
+                <com.focusfarm.app.components.DonutChartView
+                    android:id="@+id/donut_resistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_resistance_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="78%"
+                        android:textColor="@color/soil"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.1"
+                        android:text="@string/stats_resisted_label"
+                        android:textAllCaps="true"
+                        android:textColor="@color/stats_text_secondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_resistance_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/stats_resistance_summary"
+                android:textColor="@color/bark"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- 2. Sanctuary Progress -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/stats_section_spacing"
+            android:background="@drawable/bg_stats_card"
+            android:elevation="1dp"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stats_sanctuary_title"
+                android:textColor="@color/soil"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Tree growth -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_stats_tree_small" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/stats_tree_growth"
+                    android:textColor="@color/stats_text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_tree_growth_pct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="75%"
+                    android:textColor="@color/moss"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_tree_growth"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:progress="75"
+                android:progressDrawable="@drawable/stats_sleep_progress_layer" />
+
+            <!-- Breathing success -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_stats_breathing" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/stats_breathing_success"
+                    android:textColor="@color/stats_text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_breathing_pct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="92%"
+                    android:textColor="@color/moss"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_breathing"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:progress="92"
+                android:progressDrawable="@drawable/stats_sleep_progress_layer" />
+
+            <TextView
+                android:id="@+id/tv_companion_species"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:textColor="@color/bark"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- 3. Sleep — past 7 days -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/stats_section_spacing"
+            android:background="@drawable/bg_stats_card"
+            android:elevation="1dp"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stats_sleep_7day_title"
+                android:textColor="@color/soil"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_sleep_7day_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/stats_text_secondary"
+                android:textSize="14sp" />
+
+            <com.focusfarm.app.components.SleepBarChartView
+                android:id="@+id/sleep_bar_chart"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="16dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/stats_ring_track" />
+
+            <LinearLayout
+                android:id="@+id/layout_sleep_day_rows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+        <!-- 4. Focus Suggestion -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/stats_section_spacing"
+            android:background="@drawable/bg_stats_suggestion_card"
+            android:elevation="1dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_stats_lightbulb" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/stats_suggestion_title"
+                    android:textColor="@color/soil"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/stats_suggestion_body"
+                android:textColor="@color/bark"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- 5. Weekly snapshot (compact detail rows) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/stats_section_spacing"
+            android:background="@drawable/bg_stats_card"
+            android:elevation="1dp"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.06"
+                android:text="@string/stats_weekly_snapshot"
+                android:textAllCaps="true"
+                android:textColor="@color/stats_text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_snapshot_resists"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/stats_text_primary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_snapshot_sleep_streak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/stats_text_primary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_snapshot_farm_health"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/stats_text_primary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_snapshot_points"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/stats_text_primary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

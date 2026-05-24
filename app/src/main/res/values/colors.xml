@@ -10,4 +10,19 @@
     <color name="danger">#D85A30</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="nav_surface">#F2F8EA</color>
+    <color name="sleep_counter_bg">#F5E8D4</color>
+    <color name="sleep_milestone_line">#D8D4CC</color>
+    <color name="sleep_text_muted">#8A857C</color>
+
+    <!-- Statistics page — soft MD3 / iOS-style palette -->
+    <color name="stats_bg">#F1F8E9</color>
+    <color name="stats_suggestion_bg">#E8F5E9</color>
+    <color name="stats_text_primary">#3D3D3D</color>
+    <color name="stats_text_secondary">#9A9A9A</color>
+    <color name="stats_accent_green">#8BC9A5</color>
+    <color name="stats_accent_blue">#9BB8E8</color>
+    <color name="stats_accent_purple">#C4B5E8</color>
+    <color name="stats_ring_track">#EFEFEF</color>
+    <color name="stats_points_ring">#A8D5BA</color>
 </resources>

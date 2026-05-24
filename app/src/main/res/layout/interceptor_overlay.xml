@@ -1,100 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/soil"
+    android:background="@color/sky"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="40dp"
+    android:paddingBottom="24dp">
 
     <TextView
         android:id="@+id/overlay_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:gravity="center"
         android:text="@string/overlay_title"
-        android:textColor="@color/sky"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/countdown_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/countdown_label"
-        android:textColor="@color/sprout"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/overlay_title" />
-
-    <TextView
-        android:id="@+id/countdown_timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="60"
-        android:textColor="@color/leaf"
-        android:textSize="72sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/countdown_label" />
+        android:textColor="@color/moss"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <FrameLayout
-        android:id="@+id/minigame_container"
-        android:layout_width="0dp"
+        android:id="@+id/frame_overlay_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/bark"
-        android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@id/btn_pass_test"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/countdown_timer">
+        android:layout_weight="1">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+        <!-- Shown briefly while a random challenge is picked -->
+        <LinearLayout
+            android:id="@+id/layout_choose_task"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_overlay_panel"
+            android:elevation="2dp"
             android:gravity="center"
-            android:text="@string/minigame_placeholder"
-            android:textColor="@color/sky"
-            android:textSize="16sp" />
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_random_task_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/random_task_loading"
+                android:textColor="@color/bark"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <!-- Breathing (auto-selected at random) -->
+        <LinearLayout
+            android:id="@+id/layout_breathing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_overlay_panel"
+            android:elevation="2dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_breathing_instruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/breathe_in"
+                android:textColor="@color/moss"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="@string/breathing_subtitle"
+                android:textColor="@color/stats_text_secondary"
+                android:textSize="15sp" />
+
+            <ProgressBar
+                android:id="@+id/progress_breathing"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_marginTop="32dp"
+                android:max="60"
+                android:progress="0"
+                android:progressDrawable="@drawable/stats_sleep_progress_layer" />
+
+            <TextView
+                android:id="@+id/tv_breathing_seconds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="00:10"
+                android:textColor="@color/moss"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Quiz (auto-selected at random) -->
+        <ScrollView
+            android:id="@+id/layout_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_overlay_panel"
+            android:elevation="2dp"
+            android:fillViewport="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/quiz_paragraph"
+                    android:textColor="@color/bark"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/quiz_question"
+                    android:textColor="@color/moss"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_answer_mercury"
+                    style="@style/Widget.FocusFarm.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/quiz_answer_mercury"
+                    android:textAllCaps="false"
+                    app:cornerRadius="14dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_answer_venus"
+                    style="@style/Widget.FocusFarm.Button.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/quiz_answer_venus"
+                    android:textAllCaps="false"
+                    app:cornerRadius="14dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_answer_earth"
+                    style="@style/Widget.FocusFarm.Button.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/quiz_answer_earth"
+                    android:textAllCaps="false"
+                    app:cornerRadius="14dp" />
+            </LinearLayout>
+        </ScrollView>
+
     </FrameLayout>
 
-    <Button
-        android:id="@+id/btn_pass_test"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="0dp"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_continue_app"
+        style="@style/Widget.FocusFarm.Button.Outlined"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         android:layout_marginBottom="12dp"
-        android:text="@string/btn_pass_test"
+        android:text="@string/btn_continue_with_app_placeholder"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@id/btn_dismiss"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/danger"
+        app:cornerRadius="14dp"
+        app:strokeColor="@color/danger"
+        app:strokeWidth="2dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_dismiss"
-        android:layout_width="0dp"
+        style="@style/Widget.FocusFarm.Button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="32dp"
-        android:text="@string/btn_dismiss"
+        android:text="@string/btn_leave_app"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:cornerRadius="14dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

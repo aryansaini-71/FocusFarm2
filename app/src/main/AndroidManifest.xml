@@ -8,6 +8,9 @@
         android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
 
     <application
         android:allowBackup="true"
@@ -30,8 +33,13 @@
             android:name=".onboarding.OnboardingActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <service
-            android:name=".service.FocusAccessibilityService"
+            android:name=".service.AntiBrainRotService"
             android:exported="true"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>

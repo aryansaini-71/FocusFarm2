@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sky"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="28dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_overlay_panel"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="28dp"
+        android:paddingVertical="36dp">
+
+        <TextView
+            android:id="@+id/tv_block_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/block_countdown_title"
+            android:textColor="@color/soil"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_block_countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="monospace"
+            android:text="29:53"
+            android:textColor="@color/moss"
+            android:textSize="64sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_block_countdown_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/block_countdown_remaining"
+            android:textColor="@color/stats_text_secondary"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_leave"
+        style="@style/Widget.FocusFarm.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/btn_leave_app"
+        android:textAllCaps="false"
+        app:cornerRadius="14dp" />
+
+</LinearLayout>
